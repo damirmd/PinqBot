@@ -1,7 +1,7 @@
 settings = {
-    'token': '',
+    'token': '(введите токен своего бота)',
     'bot': 'PinqWeather',
-    'id': 964506203164119050,
+    'id': (введите айди бота без кавычек),
     'prefix': '!',
-    'weather': '46d81b1aedcf0efbffeadb43ef70dea1'
+    'weather': '(введите свой токен от openweathermap.org'
 }
