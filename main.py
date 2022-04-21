@@ -18,7 +18,7 @@ bot = commands.Bot(command_prefix = settings['prefix'])
 
 @bot.command()
 async def помощь(ctx):
-    embed=discord.Embed(title="Помощь", description="Список команд:\n\n!помощь – актуальный список команд\n\n!кот – случайное фото кота\n\n!погода – прогноз погоды в выбранном вами городе", color=0x8f72da)
+    embed=discord.Embed(title="Помощь", description="Список команд:\n\n!помощь – актуальный список команд\n\n!кот – случайное фото кота\n\n!краснаяпанда – случайное фото красной панды\n\n!погода – прогноз погоды в выбранном вами городе", color=0x8f72da)
     await ctx.send(embed=embed)
 
 
@@ -29,6 +29,14 @@ async def кот(ctx):
     json_data = json.loads(response.text)
 
     embed = discord.Embed(color = 0x8f72da, title = 'Случайное фото кошки')
+    embed.set_image(url = json_data['link'])
+    await ctx.send(embed = embed)
+@bot.command()
+async def краснаяпанда(ctx):
+    response = requests.get('https://some-random-api.ml/img/red_panda') #
+    json_data = json.loads(response.text)
+
+    embed = discord.Embed(color = 0x8f72da, title = 'Случайное фото красной панды')
     embed.set_image(url = json_data['link'])
     await ctx.send(embed = embed)
 
